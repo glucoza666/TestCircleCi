@@ -12,22 +12,27 @@
  * the License.
  */
 
-package com.example.my.circlecitest;
+package com.example.my.circlecitest
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.app.Activity
+import android.os.Bundle
 
 /*
- * MainActivity class that loads MainFragment
+ * Details activity class that loads LeanbackDetailsFragment class
  */
-public class MainActivity extends Activity {
+class DetailsActivity : Activity() {
+
     /**
      * Called when the activity is first created.
      */
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_details)
     }
+
+    companion object {
+        val SHARED_ELEMENT_NAME = "hero"
+        val MOVIE = "Movie"
+    }
+
 }

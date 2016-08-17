@@ -12,20 +12,19 @@
  * the License.
  */
 
-package com.example.my.circlecitest;
+package com.example.my.circlecitest
 
-import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
+import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter
 
-public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPresenter {
+class DetailsDescriptionPresenter : AbstractDetailsDescriptionPresenter() {
 
-    @Override
-    protected void onBindDescription(ViewHolder viewHolder, Object item) {
-        Movie movie = (Movie) item;
+    override fun onBindDescription(viewHolder: AbstractDetailsDescriptionPresenter.ViewHolder, item: Any) {
+        val movie = item as Movie
 
         if (movie != null) {
-            viewHolder.getTitle().setText(movie.getTitle());
-            viewHolder.getSubtitle().setText(movie.getStudio());
-            viewHolder.getBody().setText(movie.getDescription());
+            viewHolder.title.text = movie.title
+            viewHolder.subtitle.text = movie.studio
+            viewHolder.body.text = movie.description
         }
     }
 }
